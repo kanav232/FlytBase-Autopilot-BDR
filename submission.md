@@ -10,32 +10,24 @@ The system receives inbound lead emails via a webhook, qualifies them using the 
 
 ```mermaid
 flowchart TD
-  A[Input Webhook] --> B[Orchestrator]
-  
-  B --> C[Stg 1: MEDDPICC]
-  B --> D[Stg 2: SQM Research]
-  B --> E[Stg 4: Case Study]
-
-  C --> F[Missing Variables]
-  D --> G[Account Intel]
-  
-  F --> H[Stg 3: Copywriter]
-  G --> H
-  
-  C --> I{Stg 5: GTM}
-  I -- Complex --> J[AE + Partner]
-  I -- Standard --> K[AE Only]
-  
-  H --> L[3-Step Sequence]
-  J --> M[GTM Rec]
-  K --> M
-  
-  L --> N[Stg 6: AE Handoff]
-  M --> N
-  E --> N
-  
-  N --> O[HTTP Response]
+  A[Inbound Email] --> B(Webhook API)
+  B --> C{LLM Engine}
+  C --> D[1. Qualify]
+  C --> E[2. Research]
+  C --> F[4. Match Case]
+  D & E & F --> G[3. Draft Emails]
+  C --> H[5. Partner Route]
+  G & H --> I([6. AE Handoff])
 ```
+
+**Diagram Key:**
+
+- **1. Qualify**: Extracts MEDDPICC knowns/unknowns.
+- **2. Research**: Scrapes live web data for SQM capex/priorities.
+- **3. Draft Emails**: Uses outputs from 1, 2, and 4 to write the sequence.
+- **4. Match Case**: Identifies the Anglo American case study on flytbase.com.
+- **5. Partner Route**: Evaluates LATAM region for direct vs. partner motion.
+- **6. AE Handoff**: Synthesizes all data into the final Markdown response.
 
 ## **Why this solves the brief**
 
