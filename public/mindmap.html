@@ -3,71 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autonomous BDR Agent - Mindmap</title>
+    <title>FlytBase BDR Agent - Thought Process</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body, html {
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: #f8fafc; /* Very soft gray-blue background */
             margin: 0;
             padding: 0;
-            width: 100%;
+            width: 100vw;
             height: 100vh;
-            background-color: #f9fafb;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow: hidden;
+            overflow: hidden; /* Prevents scrollbars */
         }
+        
+        .mindmap-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2vw; /* Slight padding to keep it off the absolute edges */
+            box-sizing: border-box;
+        }
+
         .mermaid {
-            width: 95vw;
-            height: 95vh;
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        /* Force the SVG to scale up and use the available space */
+
+        /* Forces the generated SVG to scale beautifully to the window size */
         .mermaid svg {
             width: 100% !important;
             height: 100% !important;
-            max-width: none !important;
+            max-width: 95vw !important;
+            max-height: 95vh !important;
+            -webkit-font-smoothing: antialiased;
         }
     </style>
 </head>
 <body>
-    <div class="mermaid">
-        mindmap
-          root((AI BDR System))
-            Input
-              Webhook Trigger
-              Parse JSON Payload
-            Orchestrator
-              LLM Engine
-              Parallel Processing
-            Qualify
-              Extract MEDDPICC
-              Identify Missing Variables
-            Research
-              Scrape Company Data
-              Find Sustainability Goals
-            Match & Route
-              Fetch Case Studies
-              Evaluate Partner Motion
-            Synthesize
-              Draft 3-Step Sequence
-              Generate AE Handoff
+
+    <div class="mindmap-container">
+        <pre class="mermaid">
+            mindmap
+              root((FlytBase<br/>AI Agent))
+                (1. Input Trigger)
+                  [Raw Webhook Payload]
+                  [Rodrigo Castillo SQM]
+                  [Atacama Lithium Context]
+                (2. Parallel Discovery)
+                  {{Stage 1: Qualify}}
+                    (MEDDPICC Framework)
+                    (Identify Missing Data)
+                  {{Stage 2: Research}}
+                    (SQM Capex Signals)
+                    (Salar Futuro Hazards)
+                  {{Stage 4: Match Case}}
+                    (Anglo American Referral)
+                    (Extreme Environment Proof)
+                  {{Stage 5: GTM Route}}
+                    (Direct AE for Software)
+                    (LATAM Hardware Partner)
+                (3. Synthesis Phase)
+                  {{Stage 3: Responses}}
+                    (Email 1: Validate)
+                    (Email 2: Provoke)
+                    (Email 3: Q3 Budget)
+                  {{Stage 6: AE Handoff}}
+                    (Format Final Markdown)
+                    (Compile Actionable Insights)
+        </pre>
     </div>
 
+    <!-- Load Mermaid.js for rendering -->
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ 
-            startOnLoad: true, 
-            theme: 'base',
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'neutral',
             themeVariables: {
-                primaryColor: '#e0f2fe',
-                primaryTextColor: '#0369a1',
-                primaryBorderColor: '#7dd3fc',
-                lineColor: '#cbd5e1',
-                secondaryColor: '#fef3c7',
-                tertiaryColor: '#f3e8ff'
+                fontFamily: 'Inter, sans-serif'
+            },
+            mindmap: {
+                padding: 15
             }
         });
     </script>
