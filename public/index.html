@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbound BDR Agent - Vercel Deployment</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #f9fafb;
+        }
+        h1 {
+            color: #111827;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        pre {
+            background: #1f2937;
+            color: #f3f4f6;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 Inbound BDR Agent webhook</h1>
+    
+    <div class="card">
+        <h2>Endpoint Status: Live</h2>
+        <p>This serverless API processes inbound lead emails, qualifies them using MEDDPICC, conducts account research, and generates an AE handoff document and email sequence.</p>
+        
+        <h3>How to test the webhook:</h3>
+        <p>Send a <code>POST</code> request to <code>/api/webhook</code> with the raw email content as the payload.</p>
+        
+        <h4>Example cURL Command:</h4>
+        <pre><code>curl -X POST https://YOUR_VERCEL_PROJECT_URL/api/webhook \
+-H "Content-Type: text/plain" \
+-d "From: Rodrigo Castillo (r.castillo@sqm.cl)
+Title: Head of Operations, Northern Operations Division
+Company: Sociedad Quimica y Minera de Chile (SQM), Chile
+Subject: Autonomous inspection for our Atacama lithium sites
+Context: Looking for drone-based inspection for 3 large-scale, 24/7 lithium extraction sites in the Atacama Desert. Contracted crews are expensive and hazardous. Referred by Anglo American. Internal budget conversation scheduled for Q3."</code></pre>
+
+        <p><strong>Note:</strong> Ensure you have added your <code>GROQ_API_KEY</code> to the Vercel Environment Variables in your project dashboard.</p>
+    </div>
+</body>
+</html>
