@@ -5,59 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autonomous BDR Agent - Mindmap</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9fafb;
+        body, html {
             margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        h1 {
-            color: #1f2937;
-            margin-bottom: 30px;
-        }
-        .mermaid-container {
+            padding: 0;
             width: 100%;
-            max-width: 1200px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            padding: 40px;
-            overflow-x: auto;
+            height: 100vh;
+            background-color: #f9fafb;
             display: flex;
             justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+        .mermaid {
+            width: 95vw;
+            height: 95vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Force the SVG to scale up and use the available space */
+        .mermaid svg {
+            width: 100% !important;
+            height: 100% !important;
+            max-width: none !important;
         }
     </style>
 </head>
 <body>
-
-    <h1>🧠 AI BDR Agent Architecture</h1>
-    
-    <div class="mermaid-container">
-        <div class="mermaid">
-            mindmap
-              root((AI BDR System))
-                Input
-                  Webhook Trigger
-                  Parse JSON Payload
-                Orchestrator
-                  LLM Engine
-                  Parallel Processing
-                Qualify
-                  Extract MEDDPICC
-                  Identify Missing Variables
-                Research
-                  Scrape Company Data
-                  Find Sustainability Goals
-                Match & Route
-                  Fetch Case Studies
-                  Evaluate Partner Motion
-                Synthesize
-                  Draft 3-Step Sequence
-                  Generate AE Handoff
-        </div>
+    <div class="mermaid">
+        mindmap
+          root((AI BDR System))
+            Input
+              Webhook Trigger
+              Parse JSON Payload
+            Orchestrator
+              LLM Engine
+              Parallel Processing
+            Qualify
+              Extract MEDDPICC
+              Identify Missing Variables
+            Research
+              Scrape Company Data
+              Find Sustainability Goals
+            Match & Route
+              Fetch Case Studies
+              Evaluate Partner Motion
+            Synthesize
+              Draft 3-Step Sequence
+              Generate AE Handoff
     </div>
 
     <script type="module">
