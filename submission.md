@@ -10,19 +10,18 @@ The system receives inbound lead emails via a webhook, qualifies them using the 
 
 ```mermaid
 flowchart TD
-  A[Webhook API] --> B{AI Orchestrator}
-  B --> C[1. Qualify Lead]
-  B --> D[2. Web Research]
-  B --> E[3. Match Case & Partner]
-  C & D & E --> F([4. Generate Emails & AE Summary])
+    A["📥 Webhook Trigger<br>(Receives Inbound Email JSON)"] --> B{"🧠 AI Orchestrator<br>(Gemini 1.5 Flash API)"}
+    
+    subgraph Parallel Processing Context
+        B --> C["🔍 Stage 1: Qualify<br>Extract MEDDPICC<br>Flag Unknown Variables"]
+        B --> D["🌐 Stage 2: Research<br>Scrape SQM Capex Data<br>& Salar Futuro Goals"]
+        B --> E["🤝 Stage 4 & 5: Match<br>Anglo American Case Study<br>+ LATAM Partner Motion"]
+    end
+    
+    C & D & E --> F["✍️ Stage 3: Copywriter<br>Generate 3-Step Sequence<br>Using Stage 1 & 2 Context"]
+    
+    F --> G(["📄 Stage 6: AE Handoff<br>Synthesize Output into<br>Final Markdown Summary"])
 ```
-
-**Diagram Key:**
-
-- **1. Qualify Lead**: Extracts MEDDPICC knowns/unknowns.
-- **2. Web Research**: Scrapes live web data for SQM capex and priorities.
-- **3. Match Case & Partner**: Identifies Anglo American case study and LATAM partner route.
-- **4. Generate Emails & AE Summary**: Synthesizes the parallel data into the final sequences and markdown handoff.
 
 ## **Why this solves the brief**
 
