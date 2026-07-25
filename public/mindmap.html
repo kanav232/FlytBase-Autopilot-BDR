@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous BDR Agent - Mindmap</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #1f2937;
+            margin-bottom: 30px;
+        }
+        .mermaid-container {
+            width: 100%;
+            max-width: 1200px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+            overflow-x: auto;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🧠 AI BDR Agent Architecture</h1>
+    
+    <div class="mermaid-container">
+        <div class="mermaid">
+            mindmap
+              root((AI BDR System))
+                Input
+                  Webhook Trigger
+                  Parse JSON Payload
+                Orchestrator
+                  LLM Engine
+                  Parallel Processing
+                Qualify
+                  Extract MEDDPICC
+                  Identify Missing Variables
+                Research
+                  Scrape Company Data
+                  Find Sustainability Goals
+                Match & Route
+                  Fetch Case Studies
+                  Evaluate Partner Motion
+                Synthesize
+                  Draft 3-Step Sequence
+                  Generate AE Handoff
+        </div>
+    </div>
+
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#e0f2fe',
+                primaryTextColor: '#0369a1',
+                primaryBorderColor: '#7dd3fc',
+                lineColor: '#cbd5e1',
+                secondaryColor: '#fef3c7',
+                tertiaryColor: '#f3e8ff'
+            }
+        });
+    </script>
+</body>
+</html>
