@@ -1,14 +1,10 @@
 # **submission**
 
-<br>
-
 ## **What I built**
 
 An automated, multi-agent AI system built for enterprise Business Development Representative (BDR) workflows, deployed as a serverless Vercel function. 
 
 The system receives inbound lead emails via a webhook, qualifies them using the **MEDDPICC** framework, conducts deep web account research, and generates personalized, multi-step response sequences. It culminates in generating an actionable **AE Handoff Summary** in Markdown.
-
-<br>
 
 ## **Architecture / Flow**
 
@@ -28,8 +24,6 @@ flowchart TD
     F --> G(["📄 Stage 6: AE Handoff<br>Synthesize Output into<br>Final Markdown Summary"])
 ```
 
-<br>
-
 ## **Why this solves the brief**
 
 This solution addresses the core challenge of scaling inbound lead processing for complex enterprise products. 
@@ -43,8 +37,6 @@ Instead of generic auto-replies, the system intelligently:
 - **Determines GTM strategy** based on region and product complexity
 
 The integration of real-time web research ensures that the drafted email sequences attempt to uncover missing variables while speaking directly to the prospect's immediate business pain points (cost, safety, Q3 budget).
-
-<br>
 
 ## **Evidence from the codebase**
 
@@ -62,8 +54,6 @@ The implementation is confirmed by the following key files in the repository:
 
 - **`public/index.html`**: A frontend landing page providing instructions and a testing UI for the live Vercel deployment.
 
-<br>
-
 ## **Demo / results**
 
 During live testing, the system executed end-to-end in **under 10 seconds** and reliably returned the fully formatted markdown output to the frontend UI without hallucinations. 
@@ -75,8 +65,6 @@ Specific observations include:
 - **Live Research**: The web research node correctly identified SQM's multi-billion dollar capex cycle and sustainability initiatives (e.g., "Salar Futuro").
 
 - **Sequence Personalization**: The generated email sequence dynamically adapted its tone for a **Head of Operations** and thoughtfully referenced the hazardous conditions of the Atacama Desert to build immediate rapport.
-
-<br>
 
 ## **Notes and limitations**
 
