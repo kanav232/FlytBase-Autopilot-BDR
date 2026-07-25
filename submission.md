@@ -12,11 +12,12 @@ The system receives inbound lead emails via a webhook, qualifies them using the 
 flowchart TD
     A["📥 Webhook Trigger<br>(Receives Inbound Email JSON)"] --> B{"🧠 AI Orchestrator<br>(Gemini 1.5 Flash API)"}
     
-    subgraph Parallel Processing Context
+    subgraph ParallelContext [Parallel Processing Context]
         B --> C["🔍 Stage 1: Qualify<br>Extract MEDDPICC<br>Flag Unknown Variables"]
         B --> D["🌐 Stage 2: Research<br>Scrape SQM Capex Data<br>& Salar Futuro Goals"]
         B --> E["🤝 Stage 4 & 5: Match<br>Anglo American Case Study<br>+ LATAM Partner Motion"]
     end
+    style ParallelContext fill:transparent,stroke:#ccc
     
     C & D & E --> F["✍️ Stage 3: Copywriter<br>Generate 3-Step Sequence<br>Using Stage 1 & 2 Context"]
     
